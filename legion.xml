@@ -102,7 +102,6 @@
 
   <!-- Hals -->
   <project path="hardware/custom/interfaces" name="hardware_custom_interfaces" remote="legion"  />
-  <project path="hardware/libhardware_legacy" name="hardware_libhardware_legacy" remote="legion"  />
   <project path="hardware/interfaces" name="hardware_interfaces" remote="legion"  />
   <project path="hardware/nxp/nfc" name="hardware_nxp_nfc" remote="legion"  />
   <project path="hardware/ril" name="hardware_ril" remote="legion"  />
