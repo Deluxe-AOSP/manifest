@@ -69,6 +69,7 @@
   <project path="external/airbnb-lottie" name="external_airbnb-lottie" remote="legion"  />
   <project path="external/motorola/faceunlock" name="external_motorola_faceunlock" remote="leg-lab"  />
   <project path="external/libcxx" name="external_libcxx" remote="legion"  />
+  <project path="external/asus/stitchimage" name="external_asus_stitchimage" remote="legion" />
   <project path="external/json-c" name="android_external_json-c" remote="lineage" />
   <project path="external/e2fsprogs" name="android_external_e2fsprogs" remote="lineage" />
   <project path="external/selinux" name="external_selinux" remote="legion"  />
