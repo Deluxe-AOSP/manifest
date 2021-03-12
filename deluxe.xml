@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <!-- LegionOS remote -->
-  <remote name="legion"
-          fetch="https://github.com/Project-LegionOS"
-          revision="refs/heads/11"
-          sync-j="8" />
-
-  <!-- DeluxeOS remote -->
+    <!-- DeluxeOS remote -->
   <remote name="dex"
           fetch="https://github.com/Deluxe-AOSP"
           revision="refs/heads/11"
-          sync-j="8" /
+          sync-j="8" />
 
   <!-- Github -->
   <remote name="github"
           fetch="https://github.com/" />
 
   <!-- Build -->
-  <project path="build/make" name="build_make" remote="legion" revision="11" >
+  <project path="build/make" name="build_make" remote="dex" revision="11" >
       <copyfile src="core/root.mk" dest="Makefile" />
       <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
       <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
@@ -28,86 +22,86 @@
       <linkfile src="tools" dest="build/tools" />
   </project>
     
-  <project path="build/soong" name="build_soong" remote="legion" revision="11" >
+  <project path="build/soong" name="build_soong" remote="dex" revision="11" >
       <linkfile src="root.bp" dest="Android.bp" />
       <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
   </project>
      
-  <project path="art" name="android_art" remote="legion" /> 
-  <project path="bionic" name="bionic" remote="legion"  />
-  <project path="bootable/recovery" name="bootable_recovery" remote="legion" />
-  <project path="tools/metalava" name="tools_metalava" remote="legion" />
-  <project path="manifest" name="manifest" remote="legion" />
+  <project path="art" name="android_art" remote="dex" /> 
+  <project path="bionic" name="bionic" remote="dex"  />
+  <project path="bootable/recovery" name="bootable_recovery" remote="dex" />
+  <project path="tools/metalava" name="tools_metalava" remote="dex" />
+  <project path="manifest" name="manifest" remote="dex" />
 
   <!-- Device -->
-  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="legion"  />
-  <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy-legacy-um" remote="legion"  />
-  <project path="device/legion/sepolicy" name="device_legion_sepolicy" remote="legion"  />
-  <project path="device/qcom/sepolicy_vndr" name="device_qcom_sepolicy_vndr" remote="legion"  />
+  <project path="device/qcom/sepolicy" name="device_qcom_sepolicy" remote="dex"  />
+  <project path="device/qcom/sepolicy-legacy-um" name="device_qcom_sepolicy-legacy-um" remote="dex"  />
+  <project path="device/deluxe/sepolicy" name="device_deluxe_sepolicy" remote="dex"  />
+  <project path="device/qcom/sepolicy_vndr" name="device_qcom_sepolicy_vndr" remote="dex"  />
 
   <!-- External -->
-  <project path="external/arm-optimized-routines" name="external_arm-optimized-routines" remote="legion" />
-  <project path="external/airbnb-lottie" name="external_airbnb-lottie" remote="legion"  />
-  <project path="external/libcxx" name="external_libcxx" remote="legion"  />
-  <project path="external/asus/stitchimage" name="external_asus_stitchimage" remote="legion" />
-  <project path="external/selinux" name="external_selinux" remote="legion"  />
-  <project path="external/sqlite" name="external_sqlite" remote="legion"  />
-  <project path="external/fastrpc" name="external_fastrpc" remote="legion"  />
-  <project path="external/tinycompress" name="external_tinycompress" remote="legion"  />
+  <project path="external/arm-optimized-routines" name="external_arm-optimized-routines" remote="dex" />
+  <project path="external/airbnb-lottie" name="airbnb-lottie" remote="dex"  />
+  <project path="external/libcxx" name="external_libcxx" remote="dex"  />
+  <project path="external/asus/stitchimage" name="external_asus_stitchimage" remote="dex" />
+  <project path="external/selinux" name="external_selinux" remote="dex"  />
+  <project path="external/sqlite" name="external_sqlite" remote="dex"  />
+  <project path="external/fastrpc" name="external_fastrpc" remote="dex"  />
+  <project path="external/tinycompress" name="external_tinycompress" remote="dex"  />
 
   <!-- Frameworks -->
-  <project path="frameworks/av" name="frameworks_av" remote="legion"  />
-  <project path="frameworks/base" name="frameworks_base" remote="legion"  />
-  <project path="frameworks/native" name="frameworks_native" remote="legion"  />
-  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="legion"  />
-  <project path="frameworks/opt/net/wifi" name="frameworks_opt_net_wifi" remote="legion"  />
+  <project path="frameworks/av" name="frameworks_av" remote="dex"  />
+  <project path="frameworks/base" name="frameworks_base" remote="dex"  />
+  <project path="frameworks/native" name="frameworks_native" remote="dex"  />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" remote="dex"  />
+  <project path="frameworks/opt/net/wifi" name="frameworks_opt_net_wifi" remote="dex"  />
 
   <!-- Hals -->
-  <project path="hardware/custom/interfaces" name="hardware_custom_interfaces" remote="legion"  />
-  <project path="hardware/interfaces" name="hardware_interfaces" remote="legion"  />
-  <project path="hardware/nxp/nfc" name="hardware_nxp_nfc" remote="legion"  />
-  <project path="hardware/ril" name="hardware_ril" remote="legion"  />
+  <project path="hardware/custom/interfaces" name="hardware_custom_interfaces" remote="dex"  />
+  <project path="hardware/interfaces" name="hardware_interfaces" remote="dex"  />
+  <project path="hardware/nxp/nfc" name="hardware_nxp_nfc" remote="dex"  />
+  <project path="hardware/ril" name="hardware_ril" remote="dex"  />
 
   <!-- Packages -->
-  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="legion"  />
-  <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" remote="legion"  />
-  <project path="packages/apps/LegionSettings" name="packages_apps_LegionSettings" remote="legion"  />
-  <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="legion"  />
-  <project path="packages/apps/Updater" name="packages_apps_Updater" remote="legion"  />
-  <project path="packages/apps/Nfc" name="packages_apps_Nfc" remote="legion"  />
-  <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="legion"  />
-  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="legion"  />
-  <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="legion"  />
-  <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="legion"  />
-  <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" remote="legion"  />
+  <project path="packages/apps/Settings" name="packages_apps_Settings" remote="dex"  />
+  <project path="packages/apps/Launcher3" name="packages_apps_Launcher3" remote="dex"  />
+  <project path="packages/apps/LegionSettings" name="packages_apps_LegionSettings" remote="dex"  />
+  <project path="packages/apps/ThemePicker" name="packages_apps_ThemePicker" remote="dex"  />
+  <project path="packages/apps/Updater" name="packages_apps_Updater" remote="dex"  />
+  <project path="packages/apps/Nfc" name="packages_apps_Nfc" remote="dex"  />
+  <project path="packages/services/OmniJaws" name="packages_services_OmniJaws" remote="dex"  />
+  <project path="packages/services/Telecomm" name="packages_services_Telecomm" remote="dex"  />
+  <project path="packages/apps/Messaging" name="packages_apps_Messaging" remote="dex"  />
+  <project path="packages/apps/Dialer" name="packages_apps_Dialer" remote="dex"  />
+  <project path="packages/apps/DeskClock" name="packages_apps_DeskClock" remote="dex"  />
 
   <!-- Prebuilt -->
-  <project path="prebuilts/abi-dumps/vndk" name="prebuilts_abi-dumps_vndk" remote="legion"  />
-  <project path="prebuilts/tools-legion" name="prebuilts_tools-legion" remote="legion" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="prebuilts_gcc_linux-x86_host_x86_64-linux-glibc2.17-4.8" remote="legion" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" remote="legion" clone-depth="1" />
-  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" remote="legion" clone-depth="1" />
+  <project path="prebuilts/abi-dumps/vndk" name="prebuilts_abi-dumps_vndk" remote="dex"  />
+  <project path="prebuilts/tools-deluxe" name="prebuilts_tools-deluxe" remote="dex" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/host/x86_64-linux-glibc2.17-4.8" name="prebuilts_gcc_linux-x86_host_x86_64-linux-glibc2.17-4.8" remote="dex" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.9" name="prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9" remote="dex" clone-depth="1" />
+  <project path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9" name="prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9" remote="dex" clone-depth="1" />
 
   <!-- System -->
-  <project path="system/core" name="system_core" remote="legion"  />
-  <project path="system/sepolicy" name="system_sepolicy" remote="legion"  />
-  <project path="system/qcom" name="system_qcom" remote="legion"  />
-  <project path="system/tools/dtbtool" name="system_tools_dtbtool" remote="legion"  />
-  <project path="system/tools/mkbootimg" name="system_tools_mkbootimg" remote="legion" revision="11" />
-  <project path="system/vold" name="system_vold" remote="legion" revision="11" />
-  <project path="system/update_engine" name="system_update_engine" remote="legion" revision="11" />
-  <project path="system/netd" name="system_netd" remote="legion" revision="11" />
+  <project path="system/core" name="system_core" remote="dex"  />
+  <project path="system/sepolicy" name="system_sepolicy" remote="dex"  />
+  <project path="system/qcom" name="system_qcom" remote="dex"  />
+  <project path="system/tools/dtbtool" name="system_tools_dtbtool" remote="dex"  />
+  <project path="system/tools/mkbootimg" name="system_tools_mkbootimg" remote="dex" revision="11" />
+  <project path="system/vold" name="system_vold" remote="dex" revision="11" />
+  <project path="system/update_engine" name="system_update_engine" remote="dex" revision="11" />
+  <project path="system/netd" name="system_netd" remote="dex" revision="11" />
 
 
   <!-- Vendors -->
-  <project path="vendor/legion" name="vendor_legion" remote="legion" revision="11" />
-  <project path="vendor/LegionParts" name="vendor_LegionParts" remote="legion" revision="11" />
-  <project path="vendor/codeaurora/telephony" name="vendor_codeaurora_telephony" remote="legion" />
-  <project path="vendor/qcom/opensource/dataservices" name="vendor_qcom_opensource_dataservices" remote="legion" />
-  <project path="vendor/qcom/opensource/interfaces" name="vendor_qcom_opensource_interfaces" remote="legion" revision="11" />
+  <project path="vendor/deluxe" name="vendor_deluxe" remote="dex" revision="11" />
+  <project path="vendor/LegionParts" name="vendor_LegionParts" remote="dex" revision="11" />
+  <project path="vendor/codeaurora/telephony" name="vendor_codeaurora_telephony" remote="dex" />
+  <project path="vendor/qcom/opensource/dataservices" name="vendor_qcom_opensource_dataservices" remote="dex" />
+  <project path="vendor/qcom/opensource/interfaces" name="vendor_qcom_opensource_interfaces" remote="dex" revision="11" />
       <copyfile dest="vendor/qcom/opensource/Android.bp" src="os_pickup.bp" />
-  <project path="vendor/qcom/opensource/healthd-ext" name="vendor_qcom_opensource_healthd-ext" remote="legion" revision="11" />
-  <project path="vendor/qcom/opensource/vibrator" name="vendor_qcom_opensource_vibrator" remote="legion" revision="11" />
+  <project path="vendor/qcom/opensource/healthd-ext" name="vendor_qcom_opensource_healthd-ext" remote="dex" revision="11" />
+  <project path="vendor/qcom/opensource/vibrator" name="vendor_qcom_opensource_vibrator" remote="dex" revision="11" />
 
 </manifest>
 
