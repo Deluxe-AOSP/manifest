@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+
+  <!--Deluxe Exp-->
+  <remote name="dex-lab"
+          fetch="https://gitlab.com/deluxe-exp"
+          revision="refs/heads/11"
+          sync-j="8" />
+        
+
+
+
+    <project path="external/motorola/faceunlock" name="external_motorola_faceunlock" remote="dex-lab"  />
+    <project path="vendor/google/gms" name="android_vendor_google_gms" remote="dex-lab" revision="11" />
+
+
+
+
+
+
+
+
+
+<manifest>
